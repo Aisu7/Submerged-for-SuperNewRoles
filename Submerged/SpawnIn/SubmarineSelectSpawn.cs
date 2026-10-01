@@ -417,14 +417,14 @@ public class SubmarineSelectSpawn(nint ptr) : Minigame(ptr)
 
         PlayerControl.LocalPlayer.moveable = true;
         PlayerControl.LocalPlayer.SetKillTimer(GameManager.Instance.LogicOptions.GetKillCooldown());
-        ShipStatus.Instance.EmergencyCooldown = GameManager.Instance.LogicOptions.GetEmergencyCooldown();
+        // SNRと衝突 ShipStatus.Instance.EmergencyCooldown = GameManager.Instance.LogicOptions.GetEmergencyCooldown();
         HudManager.Instance.PlayerCam.Locked = false;
         HudManager.Instance.SetMapAndInfoButtonsEnabled(true);
         HudManager.Instance.SetHudActive(true);
         ControllerManager.Instance.CloseAndResetAll();
 
         int emergencyCooldown = GameManager.Instance.LogicOptions.GetEmergencyCooldown();
-        SetSabotageTimers(Math.Clamp(emergencyCooldown - 5, 0, 15));
+        // SNRと衝突 SetSabotageTimers(Math.Clamp(emergencyCooldown - 5, 0, 15));
 
         Destroy(gameObject);
     }
