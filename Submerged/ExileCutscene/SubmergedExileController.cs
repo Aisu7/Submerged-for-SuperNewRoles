@@ -215,8 +215,8 @@ public sealed class SubmergedExileController(nint ptr) : ExileController(ptr)
             yield return ShipStatus.Instance.PrespawnStep();
 
             // We can't use ReEnableGameplay because it fades the screen to clear and we don't want that
-            PlayerControl.LocalPlayer.SetKillTimer(GameManager.Instance.LogicOptions.GetKillCooldown());
-            ShipStatus.Instance.EmergencyCooldown = GameManager.Instance.LogicOptions.GetEmergencyCooldown();
+            // SNRと競合 PlayerControl.LocalPlayer.SetKillTimer(GameManager.Instance.LogicOptions.GetKillCooldown());
+            // SNRと競合 ShipStatus.Instance.EmergencyCooldown = GameManager.Instance.LogicOptions.GetEmergencyCooldown();
             HudManager.Instance.PlayerCam.Locked = false;
             HudManager.Instance.SetMapAndInfoButtonsEnabled(true);
             HudManager.Instance.SetHudActive(true);
